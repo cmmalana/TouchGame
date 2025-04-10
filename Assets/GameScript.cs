@@ -90,7 +90,7 @@ public class GameScript : MonoBehaviour
     }
 
     IEnumerator onGameOver(){
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.3f);
 
         // show yung congrats
         foreach (TextMeshProUGUI tmp in CongratsTexts){
