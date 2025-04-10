@@ -443,6 +443,7 @@ MonoBehaviour:
   GameTimerText: {fileID: 81651896}
   TryAgainCanvas: {fileID: 1110302961}
   Congrats: {fileID: 621823383}
+  VidPlayerPlaceHolder: {fileID: 220238208}
 --- !u!114 &61400064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,6 +456,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d89183aadb6baf43af09fa7b946e372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TopScore: {fileID: 313733206}
+  CongratsScore: {fileID: 1266140392}
 --- !u!1 &75767657
 GameObject:
   m_ObjectHideFlags: 0
