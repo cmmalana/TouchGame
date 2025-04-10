@@ -6,18 +6,22 @@ public class TouchScript : MonoBehaviour
 {
     GameObject ExplosionPrefab;
     ScoreManagerScript scoreManagerScript;
+    GameScript gameScript;
+    
     float particleLifeTime = 3.5f;
 
     void Start()
     {
         ExplosionPrefab = Resources.Load<GameObject>("Shine_blue");
         scoreManagerScript = FindFirstObjectByType<ScoreManagerScript>();
+        gameScript = FindFirstObjectByType<GameScript>();
     }
 
     void OnMouseDown()
     {
         // May specific na gagawin if hindi 45 ang naclick
         if (gameObject.tag == "Bomb"){
+            gameScript.onWrongTarget();
             return;
         }
 

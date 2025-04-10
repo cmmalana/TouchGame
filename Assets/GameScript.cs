@@ -117,5 +117,9 @@ public class GameScript : MonoBehaviour
         WallAnimator.SetTrigger("Restart");
         yield return new WaitForSeconds(2f);
     }
+
+    public void onWrongTarget(){
+        WallAnimator.SetTrigger("WrongTarget");
+    }
     
 }
