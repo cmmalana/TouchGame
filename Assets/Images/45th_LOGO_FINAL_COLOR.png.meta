@@ -1,0 +1,468 @@
+fileFormatVersion: 2
+guid: 759e42c531c3bb5418459d3b556b3f6c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1560723212796485304
+    second: 45th_LOGO_FINAL_COLOR_0
+  - first:
+      213: 5189755672735319941
+    second: 45th_LOGO_FINAL_COLOR_1
+  - first:
+      213: -2023491461017675798
+    second: 45th_LOGO_FINAL_COLOR_2
+  - first:
+      213: 350546916625200616
+    second: 45th_LOGO_FINAL_COLOR_3
+  - first:
+      213: -438574921696747524
+    second: 45th_LOGO_FINAL_COLOR_4
+  - first:
+      213: -5615725556809587404
+    second: 45th_LOGO_FINAL_COLOR_5
+  - first:
+      213: -939192670243837730
+    second: 45th_LOGO_FINAL_COLOR_6
+  - first:
+      213: 275274213884821782
+    second: 45th_LOGO_FINAL_COLOR_7
+  - first:
+      213: -1073457417291036994
+    second: 45th_LOGO_FINAL_COLOR_8
+  - first:
+      213: -1630143514805689410
+    second: 45th_LOGO_FINAL_COLOR_9
+  - first:
+      213: 4366756461577560777
+    second: 45th_LOGO_FINAL_COLOR_10
+  - first:
+      213: 4115777179539601335
+    second: 45th_LOGO_FINAL_COLOR_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 45th_LOGO_FINAL_COLOR_0
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 546
+        width: 830
+        height: 1011
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bed0733e7dc8a510800000000000000
+      internalID: 1560723212796485304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 45th_LOGO_FINAL_COLOR_1
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 1342
+        width: 114
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5870570b947b50840800000000000000
+      internalID: 5189755672735319941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 45th_LOGO_FINAL_COLOR_2
+      rect:
+        serializedVersion: 2
+        x: 1572
+        y: 1344
+        width: 168
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae75104bc3d1be3e0800000000000000
+      internalID: -2023491461017675798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 45th_LOGO_FINAL_COLOR_3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 210
+        width: 884
+        height: 1118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e5bd8a30946dd400800000000000000
+      internalID: 350546916625200616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 45th_LOGO_FINAL_COLOR_4
+      rect:
+        serializedVersion: 2
+        x: 1447
+        y: 862
+        width: 94
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cffded0be6ed9e9f0800000000000000
+      internalID: -438574921696747524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 45th_LOGO_FINAL_COLOR_5
+      rect:
+        serializedVersion: 2
+        x: 1426
+        y: 703
+        width: 88
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43528460c5fe012b0800000000000000
+      internalID: -5615725556809587404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 45th_LOGO_FINAL_COLOR_6
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 767
+        width: 92
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed827721e3157f2f0800000000000000
+      internalID: -939192670243837730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 45th_LOGO_FINAL_COLOR_7
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 487
+        width: 194
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6110e666078f1d300800000000000000
+      internalID: 275274213884821782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 45th_LOGO_FINAL_COLOR_8
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 625
+        width: 111
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb60cd89a205a11f0800000000000000
+      internalID: -1073457417291036994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 45th_LOGO_FINAL_COLOR_9
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 422
+        width: 87
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb3a9133c119069e0800000000000000
+      internalID: -1630143514805689410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 45th_LOGO_FINAL_COLOR_10
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 430
+        width: 93
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c2e8f0add5d99c30800000000000000
+      internalID: 4366756461577560777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 45th_LOGO_FINAL_COLOR_11
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 450
+        width: 101
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b7fd19d98d2e1930800000000000000
+      internalID: 4115777179539601335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      45th_LOGO_FINAL_COLOR_0: 1560723212796485304
+      45th_LOGO_FINAL_COLOR_1: 5189755672735319941
+      45th_LOGO_FINAL_COLOR_10: 4366756461577560777
+      45th_LOGO_FINAL_COLOR_11: 4115777179539601335
+      45th_LOGO_FINAL_COLOR_2: -2023491461017675798
+      45th_LOGO_FINAL_COLOR_3: 350546916625200616
+      45th_LOGO_FINAL_COLOR_4: -438574921696747524
+      45th_LOGO_FINAL_COLOR_5: -5615725556809587404
+      45th_LOGO_FINAL_COLOR_6: -939192670243837730
+      45th_LOGO_FINAL_COLOR_7: 275274213884821782
+      45th_LOGO_FINAL_COLOR_8: -1073457417291036994
+      45th_LOGO_FINAL_COLOR_9: -1630143514805689410
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
