@@ -32,12 +32,24 @@ public class GameScript : MonoBehaviour
     string configfolderpath;
     string settingsconfig;
     settingsConfig settingsConfig;
+    bool cursorVisible = true;
     float scale = 1f;
     int GameTime = 60; // Ilang seconds yung game bago mag end
 
     void Awake()
     {
         settingsConfig = new settingsConfig();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            cursorVisible = !cursorVisible; // Toggle the state
+
+            Cursor.visible = cursorVisible;
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 
     void Start()
