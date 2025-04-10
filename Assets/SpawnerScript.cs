@@ -11,6 +11,8 @@ public class SpawnerScript : MonoBehaviour
     [Header("Others")]
     public Button StartButton;
     public BoxCollider2D SpawnerCollider;
+    public float scale = 1f;
+    public float particleScale = 0.1f;
 
     bool isStart = false;
     float minSpawnDelay = 0.25f;
@@ -51,6 +53,7 @@ public class SpawnerScript : MonoBehaviour
 
             GameObject TargetClone = Instantiate(Spawn, position, rotation, targettransform);
             TargetClone.gameObject.SetActive(true);
+            TargetClone.GetComponent<RectTransform>().localScale = new Vector3(scale, scale, scale);
             Destroy(TargetClone, maxLifetime);
 
             float force = Random.Range(minForce, maxForce);
@@ -62,5 +65,15 @@ public class SpawnerScript : MonoBehaviour
 
     public void onGameEnd(){
         isStart = false;
+    }
+
+    public void TargetSizeIncrease(){
+        scale += 0.5f;
+        particleScale += 0.05f;
+    }
+
+    public void TargetSizeDecrease(){
+        scale -= 0.5f;
+        particleScale -= 0.05f;
     }
 }

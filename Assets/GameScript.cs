@@ -1,9 +1,17 @@
 using System.Collections;
+using System.IO;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
+
+public class settingsConfig{
+    public string GameTimevalue;
+    public int GameTimeDropDownvalue;
+    public float scalevalue;
+    public float particlescalevalue;
+}
 
 public class GameScript : MonoBehaviour
 {
@@ -14,23 +22,83 @@ public class GameScript : MonoBehaviour
     public Canvas TryAgainCanvas;
     public Canvas Congrats;
     public RawImage VidPlayerPlaceHolder;
+    public TMP_Dropdown GameTimeDropDown;
+    public Image TargetTemplate;
 
     Animator WallAnimator;
     TextMeshProUGUI[] CongratsTexts;
     ScoreManagerScript scoreManagerScript;
-    int GameTime = 15; // Ilang seconds yung game bago mag end
+    string CurrentDirect;
+    string configfolderpath;
+    string settingsconfig;
+    settingsConfig settingsConfig;
+    float scale = 1f;
+    int GameTime = 60; // Ilang seconds yung game bago mag end
+
+    void Awake()
+    {
+        settingsConfig = new settingsConfig();
+    }
 
     void Start()
     {
+        CurrentDirect = Directory.GetCurrentDirectory();
         WallAnimator = Wall.GetComponent<Animator>();
         scoreManagerScript = FindFirstObjectByType<ScoreManagerScript>();
         Congrats.gameObject.SetActive(true);
 
         CongratsTexts = Congrats.GetComponentsInChildren<TextMeshProUGUI>();
 
+        LoadConfig();    
+
         GameTimerText.text = GameTime.ToString();
 
-        hideCongrats();        
+        hideCongrats();    
+    }
+
+    public void LoadConfig(){
+        configfolderpath = Path.Combine(CurrentDirect, "Configs");
+
+        // Gagawa ng Folder for Configs kapag wala pa
+        if (!Directory.Exists(configfolderpath)){
+            Directory.CreateDirectory(configfolderpath);
+        }
+
+        settingsconfig = Path.Combine(configfolderpath, "SettingsConfig.json");
+
+        // If nag exist yung json file, iload lang yung laman
+        if (File.Exists(settingsconfig)){
+            string loadsettings = File.ReadAllText(settingsconfig);
+            settingsConfig = JsonUtility.FromJson<settingsConfig>(loadsettings);
+
+            GameTime = int.Parse(settingsConfig.GameTimevalue);
+            GameTimeDropDown.value = settingsConfig.GameTimeDropDownvalue;
+            scale = settingsConfig.scalevalue;
+            spawnerScript.scale = scale;
+            spawnerScript.particleScale = settingsConfig.particlescalevalue;
+
+            TargetTemplate.GetComponent<RectTransform>().localScale = new Vector3(scale, scale, scale);
+
+            Debug.Log("SettingsConfig.json configs loaded. Configs: " + loadsettings);
+        }
+        else{   // Mag save ng default config if wala pa yung json file
+            InitialSaveConfig();
+        }
+        
+    }
+
+    public void InitialSaveConfig(){
+        settingsConfig.GameTimevalue = GameTime.ToString();
+        settingsConfig.GameTimeDropDownvalue = GameTimeDropDown.value;
+        settingsConfig.scalevalue = scale;
+        settingsConfig.particlescalevalue = spawnerScript.particleScale;
+        SaveConfig();
+    }
+
+    public void SaveConfig(){
+        string savesettings = JsonUtility.ToJson(settingsConfig);
+        File.WriteAllText(settingsconfig, savesettings);
+        Debug.Log("Configs saved! Configs: " + savesettings);
     }
 
     public void hideCongrats(){
@@ -120,6 +188,50 @@ public class GameScript : MonoBehaviour
 
     public void onWrongTarget(){
         WallAnimator.SetTrigger("WrongTarget");
+    }
+
+    public void onGameTimeDropDown(){
+        // 30 seconds
+        if (GameTimeDropDown.value == 1){
+            GameTime = 30;
+        }
+        else if (GameTimeDropDown.value == 2){ // 15 seconds
+            GameTime = 15;
+        }
+        else{ // 60 seconds
+            GameTime = 60;
+        }
+
+        settingsConfig.GameTimeDropDownvalue = GameTimeDropDown.value;
+        settingsConfig.GameTimevalue = GameTime.ToString();
+        
+        SaveConfig();
+    }
+
+    // Decrease ng Target Size
+    public void onMinusButton(){
+        if (scale <= 0.5f) return;
+
+        spawnerScript.TargetSizeDecrease();
+        scale -= 0.5f;
+        TargetTemplate.GetComponent<RectTransform>().localScale = new Vector3(scale, scale, scale);
+
+        settingsConfig.scalevalue = scale;
+        settingsConfig.particlescalevalue = spawnerScript.particleScale;
+        SaveConfig();
+    }
+
+    // Increase ng Target Size
+    public void onAddButton(){
+        if (scale >= 4f) return;
+
+        spawnerScript.TargetSizeIncrease();
+        scale += 0.5f;
+        TargetTemplate.GetComponent<RectTransform>().localScale = new Vector3(scale, scale, scale);
+
+        settingsConfig.scalevalue = scale;
+        settingsConfig.particlescalevalue = spawnerScript.particleScale;
+        SaveConfig();
     }
     
 }

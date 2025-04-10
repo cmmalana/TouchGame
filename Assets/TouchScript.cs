@@ -6,6 +6,7 @@ public class TouchScript : MonoBehaviour
 {
     GameObject ExplosionPrefab;
     ScoreManagerScript scoreManagerScript;
+    SpawnerScript spawnerScript;
     GameScript gameScript;
     
     float particleLifeTime = 3.5f;
@@ -15,6 +16,7 @@ public class TouchScript : MonoBehaviour
         ExplosionPrefab = Resources.Load<GameObject>("Shine_blue");
         scoreManagerScript = FindFirstObjectByType<ScoreManagerScript>();
         gameScript = FindFirstObjectByType<GameScript>();
+        spawnerScript = FindFirstObjectByType<SpawnerScript>();
     }
 
     void OnMouseDown()
@@ -29,6 +31,10 @@ public class TouchScript : MonoBehaviour
         Vector2 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         GameObject Explosion = Instantiate(ExplosionPrefab, clickPosition, Quaternion.identity);
         // Destroy(Explosion, ExplosionLifeTime);
+
+        Explosion.transform.localScale = new Vector3(spawnerScript.particleScale, spawnerScript.particleScale, spawnerScript.particleScale);
+
+
         StartCoroutine(StopAndDestroy(Explosion));
         Destroy(Explosion, particleLifeTime);
         Destroy(gameObject);
