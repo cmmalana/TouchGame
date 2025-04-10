@@ -22,6 +22,7 @@ public class TouchScript : MonoBehaviour
         // May specific na gagawin if hindi 45 ang naclick
         if (gameObject.tag == "Bomb"){
             gameScript.onWrongTarget();
+            Destroy(gameObject);
             return;
         }
 
