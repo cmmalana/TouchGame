@@ -123,6 +123,9 @@ public class GameScript : MonoBehaviour
     }
 
     public void onStartButton(){
+
+        if (spawnerScript.isStart) return;
+
         spawnerScript.onStartGame();
         StartCoroutine(GameTimer());
         GameTimerText.text = GameTime.ToString();
@@ -188,6 +191,8 @@ public class GameScript : MonoBehaviour
     }
 
     public void TryAgainButton(){
+        if (spawnerScript.isStart) return;
+
         StartCoroutine(onTryAgain());
         hideCongrats();
         onStartButton();

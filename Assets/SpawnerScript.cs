@@ -13,8 +13,8 @@ public class SpawnerScript : MonoBehaviour
     public BoxCollider2D SpawnerCollider;
     public float scale = 1f;
     public float particleScale = 0.1f;
+    public bool isStart = false;
 
-    bool isStart = false;
     float minSpawnDelay = 0.25f;
     float maxSpawnDelay = 0.4f;
     float minAngle = -15f;
@@ -31,6 +31,7 @@ public class SpawnerScript : MonoBehaviour
     }
 
     public void onStartGame(){
+
         isStart = true;
         StartButton.gameObject.SetActive(false);
         StartCoroutine(Spawner());
