@@ -19,11 +19,17 @@ public class GameScript : MonoBehaviour
     public SpawnerScript spawnerScript;
     public GameObject Wall;
     public TMP_Text GameTimerText;
-    public Canvas TryAgainCanvas;
+    public GameObject TryAgainPage;
     public Canvas Congrats;
     public RawImage VidPlayerPlaceHolder;
     public TMP_Dropdown GameTimeDropDown;
     public Image TargetTemplate;
+    public GameObject IdlePage;
+    public GameObject TimerSection;
+    public GameObject MiniScoreSection;
+    public GameObject StartButton;
+    public Text[] IdleTexts;
+    public Text[] TryAgainTexts;
 
     Animator WallAnimator;
     TextMeshProUGUI[] CongratsTexts;
@@ -35,6 +41,9 @@ public class GameScript : MonoBehaviour
     bool cursorVisible = true;
     float scale = 1f;
     int GameTime = 60; // Ilang seconds yung game bago mag end
+    float IdleTime = 15f; // Ilang seconds lang yung idle time
+    float timer = 0f; // Timer na gagamitin para icheck yung IdleTime
+    bool timerstart = false; // timer trigger
 
     void Awake()
     {
@@ -50,6 +59,42 @@ public class GameScript : MonoBehaviour
             Cursor.visible = cursorVisible;
             Cursor.lockState = CursorLockMode.None;
         }
+
+        // Start ng timer
+        if (timerstart){
+            timer += Time.deltaTime;
+            print("TIMER: " + timer);
+        }
+        else{
+            timer = 0f;
+        }
+
+        // Pag lumagpas na yung timer sa IdleTime pakita yung IdlePage
+        if (timer >=IdleTime && !IdlePage.activeSelf){
+            IdlePage.gameObject.SetActive(true);
+            timerstart = false;
+
+            // Itage yung mga timer and score sa taas
+            TimerSection.gameObject.SetActive(false);
+            MiniScoreSection.gameObject.SetActive(false);
+
+            // Make sure na nakatago pa rin yung try again logic
+            hideCongrats();
+
+            if (StartButton.activeSelf){
+                IdleTexts[0].gameObject.SetActive(false);
+                IdleTexts[1].gameObject.SetActive(false);
+            }
+            else{
+                IdleTexts[0].gameObject.SetActive(true);
+                IdleTexts[1].gameObject.SetActive(true);
+
+                TryAgainTexts[0].gameObject.SetActive(false);
+                TryAgainTexts[1].gameObject.SetActive(false);
+
+            }
+
+        }
     }
 
     void Start()
@@ -58,6 +103,8 @@ public class GameScript : MonoBehaviour
         WallAnimator = Wall.GetComponent<Animator>();
         scoreManagerScript = FindFirstObjectByType<ScoreManagerScript>();
         Congrats.gameObject.SetActive(true);
+        IdlePage.gameObject.SetActive(false);
+        timerstart = true;
 
         CongratsTexts = Congrats.GetComponentsInChildren<TextMeshProUGUI>();
 
@@ -126,6 +173,15 @@ public class GameScript : MonoBehaviour
 
         if (spawnerScript.isStart) return;
 
+        timerstart = false;
+
+        // Itago yung Idle Page
+        IdlePage.gameObject.SetActive(false);
+
+        // Show yung score and timer sa taas
+        TimerSection.gameObject.SetActive(true);
+        MiniScoreSection.gameObject.SetActive(true);
+
         spawnerScript.onStartGame();
         StartCoroutine(GameTimer());
         GameTimerText.text = GameTime.ToString();
@@ -154,6 +210,11 @@ public class GameScript : MonoBehaviour
     }
 
     public void GameOver(){
+
+        //Make sure na yung texts ay active
+        TryAgainTexts[0].gameObject.SetActive(true);
+        TryAgainTexts[1].gameObject.SetActive(true);
+
         // Gawing false yung isStart bool para di na magspawn or generate ng objects kapag game over
         spawnerScript.onGameEnd();
 
@@ -188,11 +249,14 @@ public class GameScript : MonoBehaviour
         // wait another sec para ipakita yung try again
         yield return new WaitForSeconds(1f);
         WallAnimator.SetTrigger("TryAgain");
+
+        // Start yung timer start for IdlePage
+        yield return new WaitForSeconds(2f);
+        timerstart = true;
     }
 
     public void TryAgainButton(){
         if (spawnerScript.isStart) return;
-
         StartCoroutine(onTryAgain());
         hideCongrats();
         onStartButton();
