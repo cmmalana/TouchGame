@@ -61,7 +61,7 @@ public class GameScript : MonoBehaviour
         }
 
         // Start ng timer
-        if (timerstart){
+        if (timerstart && !spawnerScript.isStart){
             timer += Time.deltaTime;
             print("TIMER: " + timer);
         }
@@ -257,6 +257,7 @@ public class GameScript : MonoBehaviour
 
     public void TryAgainButton(){
         if (spawnerScript.isStart) return;
+
         StartCoroutine(onTryAgain());
         hideCongrats();
         onStartButton();
