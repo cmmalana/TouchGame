@@ -15,12 +15,12 @@ public class SpawnerScript : MonoBehaviour
     public float particleScale = 0.1f;
     public bool isStart = false;
 
-    float minSpawnDelay = 0.25f;
-    float maxSpawnDelay = 0.4f;
+    float minSpawnDelay = 0.4f;
+    float maxSpawnDelay = 0.8f;
     float minAngle = -15f;
     float maxAngle = 15f;
     float minForce = 7f;
-    float maxForce = 12f;
+    float maxForce = 10f;
     float maxLifetime = 5f;
 
     void Start()
@@ -59,6 +59,9 @@ public class SpawnerScript : MonoBehaviour
 
             float force = Random.Range(minForce, maxForce);
             TargetClone.GetComponent<Rigidbody2D>().AddForce(TargetClone.transform.up * force, ForceMode2D.Impulse);
+
+            TargetClone.GetComponent<Rigidbody2D>().linearDamping = 0.8f;
+            TargetClone.GetComponent<Rigidbody2D>().gravityScale = 0.3f;
 
             yield return new WaitForSeconds(Random.Range(minSpawnDelay, maxSpawnDelay));
         }

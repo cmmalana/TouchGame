@@ -3450,7 +3450,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Touch anywhere to try again
+  m_Text: Touch anywhere to start
 --- !u!222 &647120612
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6767,7 +6767,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Touch anywhere to try again
+  m_Text: Touch anywhere to start
 --- !u!222 &1879916277
 CanvasRenderer:
   m_ObjectHideFlags: 0
